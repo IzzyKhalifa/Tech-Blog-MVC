@@ -1,4 +1,5 @@
 const path = require('path');
+require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
@@ -15,7 +16,7 @@ const hbs = exphbs.create({ helpers });
 
 const sess = {
   secret: 'Super duper secret',
-  cookie: {maxAge:576000 },
+  cookie: {maxAge: 576000 },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
