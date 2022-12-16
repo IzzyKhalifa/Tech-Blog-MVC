@@ -30,8 +30,8 @@ router.get('/', withAuth, (req, res) => {
       ]
     })
       .then(dbPostData => {
-        const posts = dbPostData.map(post => post.get({ plain: true }));
-        res.render('dashboard', { posts, loggedIn: true });
+        const Posts = dbPostData.map(Post => Post.get({ plain: true }));
+        res.render('dashboard', { Posts, loggedIn: true });
       })
       .catch(err => {
         console.log(err);
@@ -67,12 +67,12 @@ router.get('/edit/:id', withAuth, (req, res) => {
   })
     .then(dbPostData => {
       if (!dbPostData) {
-        res.status(404).json({ message: 'No post found with this id' });
+        res.status(404).json({ message: 'No Post found with this id' });
         return;
       }
       // serialize data before passing to template
-      const post = dbPostData.get({ plain: true });
-      res.render('edit-post', { post, loggedIn: true });
+      const Post = dbPostData.get({ plain: true });
+      res.render('edit-Post', { Post, loggedIn: true });
     })
     .catch(err => {
       console.log(err);

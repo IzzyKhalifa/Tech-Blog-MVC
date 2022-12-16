@@ -1,4 +1,4 @@
-const { Post } = require('../models');
+const  Post  = require('../models/post');
 
 const postData = [
   {
@@ -13,7 +13,7 @@ const postData = [
   },
   {
     title: 'Handlebars Partials',
-    post_text: 'Partials are another handlebars feature where you can create a partial bit of code for something like post information, or for a comment. You can then use that partial whenever that bit of information is needed for your website.',
+    post_text: 'Partials are another handlebars feature where you can create a partial bit of code for something like Post information, or for a comment. You can then use that partial whenever that bit of information is needed for your website.',
     user_id: 2,
   },
   {

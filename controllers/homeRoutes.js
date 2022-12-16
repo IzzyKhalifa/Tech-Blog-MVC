@@ -27,9 +27,9 @@ router.get('/', (req, res) => {
         ]
     })
     .then(dbPostData => {
-      const posts = dbPostData.map(post => post.get({ plain: true }));
+      const Posts = dbPostData.map(Post => Post.get({ plain: true }));
       res.render('homepage', {
-        posts,
+        Posts,
         loggedIn: req.session.loggedIn
       });
     })
@@ -39,7 +39,7 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/post/:id', (req, res) => {
+router.get('/Post/:id', (req, res) => {
     Post.findOne({
       where: {
         id: req.params.id
@@ -67,12 +67,12 @@ router.get('/post/:id', (req, res) => {
     })
       .then(dbPostData => {
         if (!dbPostData) {
-          res.status(404).json({ message: 'No post found with this id' });
+          res.status(404).json({ message: 'No Post found with this id' });
           return;
         }
-        const post = dbPostData.get({ plain: true });
-        res.render('post', {
-            post,
+        const Post = dbPostData.get({ plain: true });
+        res.render('Post', {
+            Post,
             loggedIn: req.session.loggedIn
           });
       })

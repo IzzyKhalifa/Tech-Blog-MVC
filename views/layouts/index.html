@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Blog</title>
+  <link rel="stylesheet" href="../../public/css/style.css">
+</head>
+
+<body>
+  <header class="display-flex justify-space-between align-center p-2">
+    <h1>
+      Tech Blog
+    </h1>
+    {{#if logged_in}}
+    <nav>
+      <a href="/dashboard">dashboard</a>
+      <button class="btn" id="logout">logout</button>
+    </nav>
+    {{/if}}
+  </header>
+  <main class="container container-fluid mt-5">
+    <link rel="stylesheet" href="../public/css/style.css">
+<div>
+<section class="row">
+  <div class = "column">
+    <h2>Create New Post</h2>
+
+    <form class="new-Post-form">
+      <div>
+        <label for="Post-title">Title</label>
+        <input type="text" id="Post-title" name="Post-title" />
+      </div>
+      <div>
+        <label for="Post-text">Text</label>
+        <textarea id="Post-text" name="Post-text"></textarea>
+      </div>
+      <button type="submit" class="btn">Create</button>
+    </form>
+  </div>
+  <div class = "column">
+    <h2>About Me</h2>
+    {{> user-info}}
+  </div>
+
+</section>
+
+{{#if Posts.length}}
+<section>
+  <h2>Your Posts</h2>
+  <ol>
+    {{#each Posts as |Post|}}
+    <li>
+      {{> Post-info Post}}
+      <a href="/dashboard/edit/{{Post.id}}" class="edit-link">Edit Post</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+</div>
+  </main>
+  <footer>
+      Contact Me: izzy.e.khalifa@gmail.com
+  </footer>
+
+  {{#if logged_in}}
+  <script src="../../public/js/logout.js"></script>
+  {{/if}}
+</body>
+
+<script src="./../../public/js/add-Post.js"></script>
+
+</html>

@@ -1,22 +1,23 @@
+<link rel="stylesheet" href="../public/css/style.css">
 <article>
   <a href="/dashboard"> &larr; Back to dashboard</a>
   <h2>
     Edit Post
   </h2>
-  <form class="edit-post-form">
+  <form class="edit-Post-form">
     <div>
-      <input name="post-title" type="text" value="{{post.title}}" />
+      <input name="Post-title" type="text" value="{{Post.title}}" />
     </div>
     <div>
-      <textarea name="post-text">{{post.post_text}}</textarea>
+      <textarea name="Post-text">{{Post.post_text}}</textarea>
     </div>
     <div>
-      Posted by you on {{format_date post.created_at}}
+      Posted by you on {{format_date Post.created_at}}
       |
-      <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+      <a href="/Post/{{Post.id}}">{{Post.comments.length}} {{format_plural "comment" Post.comments.length}}</a>
     </div>
-    <button type="submit">Save post</button>
-    <button type="button" class="delete-post-btn">Delete post</button>
+    <button type="submit">Save Post</button>
+    <button type="button" class="delete-Post-btn">Delete Post</button>
   </form>
 </article>
 
@@ -30,9 +31,9 @@
   </div>
 </form>
 
-{{> comments post.comments}}
+{{> comments Post.comments}}
 
 <!--Scripts-->
-<script src="/javascript/edit-post.js"></script>
-<script src="/javascript/delete-post.js"></script>
+<script src="/javascript/edit-Post.js"></script>
+<script src="/javascript/delete-Post.js"></script>
 <script src="/javascript/comment.js"></script>

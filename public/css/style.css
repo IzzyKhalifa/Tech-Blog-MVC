@@ -36,7 +36,7 @@
     background-color: #3486eb;
   }
   
-  .post-list {
+  .Post-list {
     margin: 0;
     padding: 0;
     list-style-type:none;
@@ -121,26 +121,26 @@
     color: #3486eb;
   }
   
-  .delete-post-btn {
+  .delete-Post-btn {
     background-color: #d41414;
   }
   
-  .delete-post-btn:hover {
+  .delete-Post-btn:hover {
     background-color: #ff643d;
   }
   
-  .post {
+  .Post {
     margin-bottom: 2%;
     line-height: 150%;
   }
   
-  .post .title {
+  .Post .title {
     font-style: italic;
     font-size: 1.25rem;
     color: #7d7d7d;
   }
 
-  .post .title span {
+  .Post .title span {
     font-style: italic;
     font-size: 0.8rem;
     color: #7d7d7d;
@@ -179,11 +179,11 @@
     opacity: .6;
   }
   
-  .new-post-form input, textarea {
+  .new-Post-form input, textarea {
     width: 80%;
   }
   
-  .edit-post-form {
+  .edit-Post-form {
     margin-bottom: 5%;
   }
 
