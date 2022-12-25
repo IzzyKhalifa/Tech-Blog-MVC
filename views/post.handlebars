@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="../public/css/style.css">
 {{> post-info Post}}
 
-{{#if loggedIn}}
+
 <form class="comment-form">
   <div>
     <textarea name="comment-body"></textarea>
@@ -11,10 +11,9 @@
     <button type="submit">add comment</button>
   </div>
 </form>
-{{/if}}
+
 
 {{> comments Post.comments}}
 
-{{#if loggedIn}}
+
 <script src="/javascript/comment.js"></script>
-{{/if}}
